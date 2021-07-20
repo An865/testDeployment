@@ -1,9 +1,10 @@
 let doc = document.getElementById('iFrame').contentWindow.document;
 
 async function fetchData(){
-   let dataUrl = config.DEV.API_URL;
+   let localUrl = config.DEV.API_URL;
+   let prodUrl = config.PROD.API_URL;
    try{
-      const response = await fetch(`${dataUrl}/data`);
+      const response = await fetch(`${prodUrl}/data`);
       const data = await response.json();
       return data;
    } catch(error){
