@@ -1,8 +1,9 @@
 let doc = document.getElementById('iFrame').contentWindow.document;
 
 async function fetchData(){
+   let dataUrl = config.DEV.API_URL;
    try{
-      const response = await fetch('http://localhost:8080/api/data')
+      const response = await fetch(`${dataUrl}/data`);
       const data = await response.json();
       return data;
    } catch(error){
